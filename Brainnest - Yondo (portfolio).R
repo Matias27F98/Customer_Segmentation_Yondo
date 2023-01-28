@@ -315,41 +315,10 @@ NAsegment_summary <- dfwNA %>%
 
 
 
-## Interesting to notice that biggest cluster (3rd) was a NA cluster. 
-### perhaps we don't have the best information to assume their age the 2nd largest was the one with 35-44...
-
-## check proportions of age groups?
-prop.table(df$Age)
-
-# it does skew older
-df %>%
-  ggplot(aes(Age, fill = Age)) +
-  geom_bar() +
-  theme(axis.text.x = element_blank())
 
 
 
 
-## why did i even do this?
-
-
-cluster_df <- Yondo_xlsx_QUERY_FOR_YONDOFINAL %>%
-  filter(Gender == "Female",
-         CountryName == "United States of America",
-         PlanName == "Starter",
-         Industry == "Fitness",
-         AlreadySelling == "I haven't yet started selling")
-
-skim(cluster_df)
-
-
-
-getmode(cluster_df$State)
-
-Yondo %>%
-  filter(Segment = 1) %>%
-  
-  getmode(Yondo$Revenue)
 
 
 
